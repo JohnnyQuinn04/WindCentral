@@ -1,0 +1,16 @@
+Probably going to use this if im running off of my own computer
+    from flask import Flask
+    from OpenSSL import SSL
+
+    app = Flask(__name__)
+
+    context = SSL.Context(SSL.PROTOCOL_TLSv1_2)
+    context.load_cert_chain('path/to/certificate.crt', 'path/to/private.key')
+
+    if __name__ == '__main__':
+        app.run(host='0.0.0.0', port=443, ssl_context=context)
+Ok first thing i need to do is reed up on more secutity
+    Obtain an SSL/TLS certificate: You can obtain a free SSL/TLS certificate from Let's Encrypt or purchase one from a certificate authority.
+
+use this to run it http://localhost:5000/
+and ittl just work by typin python app.py into terminal
