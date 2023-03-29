@@ -14,3 +14,16 @@ Ok first thing i need to do is reed up on more secutity
 
 use this to run it http://localhost:5000/
 and ittl just work by typin python app.py into terminal
+
+        Rough outline of WindCentral
+
+1.) focus on current python orented. and when done transition to java
+
+2.) Find a different wayof asking for the city, probably some kind of automatic locator.(ask decker probably)
+
+3.) Start with displaying all of the data(Graphs???) matbe some comment system or log in to remind you of the tempature in your email?
+Could be useful perhaps you can set it to go off at a certan time. and if it gets to a certan tempature ittl email you.
+
+4.) Make it super easy to unenrole from mailing. I hate mail I dont want
+
+5.) do the entire front end make account things. somehow figure out secutity.
