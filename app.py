@@ -1,17 +1,29 @@
 from flask import Flask, render_template, request
 import requests
+import csv
+import csvread
 
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
+
+def read_csv():
+    with open("world_cities\citys.csv", encoding='utf-8') as file:
+        csv_reader = csv.reader(file)
+        next(csv_reader) # Skip header
+        cities = []
+        for row in csv_reader:
+            cities.append(row[1]) # Append city name to list
+        return cities
+
+
 def index():
     api_key = "4744851151544ac1578cc038d586d99b"
 
     # List of cities for the dropdown
-    cities = ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix', 'Philadelphia', 'San Antonio', 'San Diego', 'Dallas', 'San Jose', 'Austin', 'Jacksonville', 'Fort Worth', 'Columbus', 'San Francisco', 'Charlotte', 'Indianapolis', 'Seattle', 'Denver', 'Washington',
-              'Boston', 'Nashville', 'El Paso', 'Detroit', 'Memphis', 'Portland', 'Oklahoma City', 'Las Vegas', 'Louisville', 'Baltimore', 'Milwaukee', 'Albuquerque', 'Tucson', 'Fresno', 'Sacramento', 'Mesa', 'Atlanta', 'Kansas City', 'Colorado Springs', 'Miami', 'Raleigh',
-              'Omaha', 'Long Beach', 'Virginia Beach', 'Oakland', 'Minneapolis', 'Tulsa', 'Wichita', 'New Orleans', 'Arlington']
-
+    # cities = read_csv("WindCentral\citys.csv")
+    cities = []
+    cities.append(read_csv())  
 
     if request.method == 'POST':
         # Get the selected city from the form
