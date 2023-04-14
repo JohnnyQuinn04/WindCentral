@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request
 import requests
 import csv
-import csvread
 
 app = Flask(__name__)
 
